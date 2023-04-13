@@ -4,8 +4,10 @@ const data = window.data;
 // Make your References to the two DOM nodes
 
 // Create a reference to the element who's ID is 'big_coffee and call it bigCoffee
+const bigCoffee = document.getElementById("big_coffee");
 
 // Create a reference to the element who's ID is 'producer_container' and call it producerContainer
+const producerContainer = document.getElementById("producer_container");
 
 /**************
  *   SLICE 1
