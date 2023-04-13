@@ -37,12 +37,21 @@ function unlockProducers(producers, coffeeCount) {
   // loop through the producers array passed into the function
   // for each producer, if the coffeeCount (passed in) is greater than or equal
   // to half the producer's price, reassign the producers.unlocked property to equal true
+  for (let i = 0; i < producers.length; i++) {
+    if (coffeeCount >= (producers[i].price / 2)) {
+      producers[i].unlocked = true;
+    }
+  }
 }
 
 function getUnlockedProducers(data) {
   // use the Array.prototype.filter() method
   // filter through the data.producers property, and return an array with only the producers whose
   // unlocked property is true
+  let result = data.producers.filter(function (value) {
+    return data.producers[value].unlocked;
+  })
+  return result;
 }
 
 // You do not need to edit this function
