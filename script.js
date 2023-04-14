@@ -49,7 +49,7 @@ function getUnlockedProducers(data) {
   // filter through the data.producers property, and return an array with only the producers whose
   // unlocked property is true
   let result = data.producers.filter(function (value) {
-    return data.producers[value].unlocked;
+    return value.unlocked;
   })
   return result;
 }
@@ -92,11 +92,10 @@ function deleteAllChildNodes(parent) {
 
 function renderProducers(data) {
   // call the unlockProducers function and pass it data.producers and data.coffee
-
+  unlockProducers(data.producers, data.coffee);
   // make a reference to the DOM element whose ID is producer_container
-
   // call the deleteAllChildNodes function and pass it the above producerContainer element
-
+  deleteAllChildNodes(producerContainer);
   // you do not need to edit the following code, but for understanding, this gets the unlocked producers,
   // and for each producer makes a little html div with that producer's info
   getUnlockedProducers(data).forEach((producer) => {
