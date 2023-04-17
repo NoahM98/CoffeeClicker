@@ -174,6 +174,6 @@ function tick(data) {
 bigCoffee.addEventListener("click", function () { clickCoffee(data) });
 // add a 'click' event listener to the element (referenced at the top of the file)
 // the event listener should call the buyButtonClick function and pass it the event, and the global data object
-producerContainer.addEventListener("click", function () { buyButtonClick("click", data) });
+producerContainer.addEventListener("click", function (event) { buyButtonClick(event, data) });
 // You do not need to edit this last line. This simple runs your tick function every 1000ms, or 1s
 setInterval(() => tick(data), 1000);
